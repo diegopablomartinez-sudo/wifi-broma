@@ -7,29 +7,51 @@
 
 <style>
 body {
-  margin: 0;
-  height: 100vh;
-  background: #111;
-  color: white;
-  font-family: Arial, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    margin: 0;
+    height: 100vh;
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .caja {
-  padding: 30px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
 }
 
 h1 {
-  font-size: 42px;
-  margin-bottom: 30px;
+    font-size: 38px;
+    margin-bottom: 15px;
 }
 
-audio {
-  width: 100%;
-  max-width: 400px;
+p {
+    font-size: 20px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 18px 45px;
+    font-size: 22px;
+    font-weight: bold;
+    border: 0;
+    border-radius: 12px;
+    background: #19b84b;
+    color: white;
+    cursor: pointer;
+}
+
+#broma {
+    display: none;
+}
+
+#broma h1 {
+    font-size: 42px;
+    line-height: 1.2;
 }
 </style>
 </head>
@@ -37,12 +59,35 @@ audio {
 <body>
 
 <div class="caja">
-  <h1>😂 LA PRÓXIMA VEZ<br>PAGÁ LOS DATOS,<br>NO SEAS MISERIA 😂</h1>
 
-  <audio controls autoplay>
-    <source src="https://files.catbox.moe/at6frb.mp3" type="audio/mpeg">
-  </audio>
+    <div id="wifi">
+        <h1>📶 WiFi GRATIS</h1>
+        <p>Conectate a nuestra red</p>
+        <button onclick="conectar()">CONECTAR</button>
+    </div>
+
+    <div id="broma">
+        <h1>😂 LA PRÓXIMA VEZ<br>
+        PAGÁ LOS DATOS,<br>
+        NO SEAS MISERIA 😂</h1>
+    </div>
+
+    <audio id="audio">
+        <source src="https://www.memes.casa/wp-content/uploads/2019/01/gemido-whatsapp.mp3" type="audio/mpeg">
+    </audio>
+
 </div>
+
+<script>
+function conectar() {
+    document.getElementById("wifi").style.display = "none";
+    document.getElementById("broma").style.display = "block";
+
+    const audio = document.getElementById("audio");
+    audio.volume = 1;
+    audio.play();
+}
+</script>
 
 </body>
 </html>
